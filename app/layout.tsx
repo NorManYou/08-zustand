@@ -6,13 +6,14 @@ import Footer from "@/components/Footer/Footer";
 import "modern-normalize";
 import "./globals.css";
 import { HOME_PAGE_URL, OG_IMAGE, SITE_NAME } from "@/constants";
+import { Toaster } from "react-hot-toast";
 
 const roboto = Roboto({
   subsets: ['latin'],
   weight: ['400', '700'],
   variable: '--font-roboto',
   display: 'swap'
-})
+});
 
 export const metadata: Metadata = {
   title: "NoteHub",
@@ -37,6 +38,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.variable}>
+        {/* Глобальный Toaster */}
+        <Toaster position="top-right" />
+
         <TanStackProvider>
           <Header />
           <main>
